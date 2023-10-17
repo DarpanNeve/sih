@@ -1,7 +1,9 @@
+import 'package:SIH/Pages/commuinty_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
 // import 'package:jaldindi/Auth/login_page.dart';
 // import 'package:jaldindi/Home/home_page.dart';
 // import 'package:jaldindi/Home/Admin/admin.dart';
@@ -16,14 +18,7 @@ class AuthService {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasData) {
-          if (FirebaseAuth.instance.currentUser!.emailVerified) {
-            // checkIsAdmin();
-            return const LoginPage();
-          } else {
-            signOutWithoutSnackBar();
-            sendVerificationEmail(context);
-            return const LoginPage();
-          }
+          return const CommunityPage();
 // Navigate to the home page.
         } else {
           // User is not signed in.
@@ -86,15 +81,15 @@ class AuthService {
             "Verification Email send", context, Icons.done, Colors.green);
       }
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password' && context.mounted ) {
+      if (e.code == 'weak-password' && context.mounted) {
         showSnackBar(e.code, context, Icons.error, Colors.red);
       } else if (e.code == 'email-already-in-use' && context.mounted) {
         showSnackBar(e.code, context, Icons.error, Colors.red);
       }
     } catch (e) {
-     if(context.mounted){
-       showSnackBar(e.toString(), context, Icons.error, Colors.red);
-     }
+      if (context.mounted) {
+        showSnackBar(e.toString(), context, Icons.error, Colors.red);
+      }
     }
   }
 
