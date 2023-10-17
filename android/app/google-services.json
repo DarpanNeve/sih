@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "855805746270",
+    "project_id": "aavishkars3",
+    "storage_bucket": "aavishkars3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855805746270:android:8d53de2a07f28baf1b68cf",
+        "android_client_info": {
+          "package_name": "com.example.sih"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIbqo1V759S3tRI3l0d46FWXGvrE4Hg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
