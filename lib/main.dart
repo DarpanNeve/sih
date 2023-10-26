@@ -1,4 +1,5 @@
-import 'package:SIH/Pages/ui.dart';
+import 'package:SIH/Api/auth_service.dart';
+import 'package:SIH/demo.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,10 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp( MaterialApp(home:ColorGradientBackground()));
+  runApp(
+    MaterialApp(
+      // home: AuthService().handleAuthState(),
+      home: Demo(),
+    ),
+  );
 }
-
-

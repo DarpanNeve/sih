@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColorGradientBackground extends StatelessWidget {
+  const ColorGradientBackground({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,13 +22,10 @@ class ColorGradientBackground extends StatelessWidget {
 class BackgroundPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Colors.blue; // Change the color as needed
+    final paint = Paint()..color = Color.fromARGB(136, 104, 195, 204); // Change the color as needed
     final path = Path();
-    final angle = 60 * (3.14159265359 / 180); // Convert 60 degrees to radians
-
     final startPoint = Offset(0, size.height * 0.2);
     final endPoint = Offset(size.width, size.height * 0.8);
-
     path.moveTo(startPoint.dx, startPoint.dy);
     path.lineTo(endPoint.dx, endPoint.dy);
     path.lineTo(size.width, size.height);

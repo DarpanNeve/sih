@@ -1,7 +1,7 @@
   import 'package:flutter/material.dart';
-  import 'package:socket_io_client/socket_io_client.dart' as IO;
+  import 'package:socket_io_client/socket_io_client.dart' as io;
   //creating instances
-  IO.Socket? socket;
+  io.Socket? socket;
 
   class Demo extends StatefulWidget {
     const Demo({super.key});
@@ -26,8 +26,8 @@ class _DemoState extends State<Demo> {
   }
 
   initSocket() {
-    socket = IO.io("http://localhost", <String, dynamic>{
-      'autoConnect': true,
+    socket = io.io("http://192.168.0.118:80", <String, dynamic>{
+      'autoConnect': false,
       'transports': ['websocket'],
     });
     socket?.connect();
@@ -35,11 +35,8 @@ class _DemoState extends State<Demo> {
       print('Connection established');
     });
     socket?.onDisconnect((_) => print('Connection Disconnection'));
-    socket?.onConnectError((err) {
-      print('Connection error: $err');
-    });
     socket?.onError((err) {
-      print('Socket error: $err');
+      print(err);
     });
 
     // Add this line to enable debug logs

@@ -3,10 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-// import 'package:jaldindi/Auth/login_page.dart';
-// import 'package:jaldindi/Home/home_page.dart';
-// import 'package:jaldindi/Home/Admin/admin.dart';
 import '../Pages/LoginPage.dart';
 import '../Widgets/Widget.dart';
 
@@ -19,10 +15,11 @@ class AuthService {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasData) {
           return const CommunityPage();
-// Navigate to the home page.
+          // Navigate to the home page.
         } else {
           // User is not signed in.
-          return const LoginPage(); // Navigate to the login page.
+          return const LoginPage();
+          // Navigate to the login page.
         }
       },
     );
