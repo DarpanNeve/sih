@@ -78,7 +78,8 @@ class LoginPage extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const ForgotPassword()));
+                                      builder: (context) =>
+                                          const ForgotPassword()));
                             },
                             child: const Text(
                               'Forgot Password ?',
@@ -139,8 +140,7 @@ class LoginPage extends StatelessWidget {
                             SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: Image.asset(
-                                    'assets/Images/Google.png')),
+                                child: Image.asset('assets/Images/Google.png')),
                             const Text(
                               "Google",
                               style: TextStyle(
@@ -173,8 +173,7 @@ class LoginPage extends StatelessWidget {
                       child: const Text(
                         "Register Now ",
                         textWidthBasis: TextWidthBasis.longestLine,
-                        style: TextStyle(
-                            color: Colors.lightBlue, fontSize: 16),
+                        style: TextStyle(color: Colors.lightBlue, fontSize: 16),
                       ),
                     ),
                     const SizedBox(
@@ -220,7 +219,7 @@ class _PasswordButtonState extends State<PasswordButton> {
           suffixIcon: GestureDetector(
               onTap: () {
                 setState(
-                      () {
+                  () {
                     _obsecureText = !_obsecureText;
                   },
                 );
